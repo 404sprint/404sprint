@@ -62,9 +62,9 @@ kramdown:
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
- clientID: 8bd97a438d0512dd0bff                            #生成的clientID
- clientSecret: 85cfc96366e9b2da9a7210aef951361f9227c0e3    #生成的clientSecret
-  repo: 404sprint.github.io    #仓库名称
+  clientID: 8bd97a438d0512dd0bff                            #生成的clientID
+  clientSecret: 85cfc96366e9b2da9a7210aef951361f9227c0e3    #生成的clientSecret
+  repo: comments    #仓库名称
   owner: 404sprint    #github用户名
   admin: 404sprint
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
@@ -86,7 +86,7 @@ ba_track_id: e817d4b47ce6f7c55ef078ffca8e25ce
 
 # Featured Tags
 featured-tags: true                     # 是否使用首页标签
-featured-condition-size: 1              # 相同标签数量大于这个数，才会出现在首页
+featured-condition-size: 0              # 相同标签数量大于这个数，才会出现在首页
 
 
 
