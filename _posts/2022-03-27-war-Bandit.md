@@ -38,9 +38,9 @@ tags:
 
 * 步骤
 
-    ```s
+    ```shell
     ssh bandit0@bandit.labs.overthewire.org -p 2220
-    bandit0  
+    bandit0 <br/>  
 
     cat readme  
     #boJ9jbbUNNfktd78OOpsqOltutMc3MY1
