@@ -40,9 +40,9 @@ tags:
 
     ```s
     ssh bandit0@bandit.labs.overthewire.org -p 2220
-    bandit0
+    bandit0  
 
-    cat readme
+    cat readme  
     #boJ9jbbUNNfktd78OOpsqOltutMc3MY1
     ```      
 
@@ -945,7 +945,7 @@ tags:
 * 引用内容
 
     ```s
-    git add . //由于文件发生了变化所以我们要追踪文件变化特别意不要忘记add后面的点
+    git add . //由于文件发生了变化所以我们要追踪文件变化特别意不要忘记add后面的点  
 
     git commit -m "Test" //这里相当于一个注释告诉别人谁做了什么操作
 
