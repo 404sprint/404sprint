@@ -40,7 +40,7 @@ tags:
 
     ```
     ssh bandit0@bandit.labs.overthewire.org -p 2220
-    bandit0 <br/>  
+    bandit0 
 
     cat readme  
     #boJ9jbbUNNfktd78OOpsqOltutMc3MY1
@@ -52,7 +52,7 @@ tags:
 
     `find 路径 -参数 "关键字" `
 
-    ```s
+    ``` 
     -user 所有者
     -group 所在组
     -size n : 文件大小 是 n 单位，b 代表 512 位元组的区块，c 表示字元数，k 表示 kilo bytes，w 是二个位元组。
@@ -63,7 +63,7 @@ tags:
 
 * 步骤
 
-    ```s
+    ``` 
     find / -name "-"
     cat /home/bandit1/-
 
@@ -77,7 +77,8 @@ tags:
 * 方法
 
     >------使用\加空格即'\ '来表示空格------
-    ```s
+
+    ``` 
     cat ./my\ file
 
     cat /home/bandit2/spaces\ in\ this\ filename
@@ -88,7 +89,8 @@ tags:
     ```
 
     >---------使用引号---------
-    ```s
+
+    ``` 
     cat /home/bandit2/'spaces in this filename'
     ```
 
@@ -104,7 +106,7 @@ tags:
 
 * ls
 
-    ```s
+    ``` 
     ls -al 查看所有文件
 
     -a参数do not ignre entries starting with .
@@ -121,7 +123,7 @@ tags:
 
 * 步骤
 
-    ```s
+    ``` 
     cd /home/bandit3/inhere
     ls -al
 
@@ -140,7 +142,7 @@ tags:
 
     less命令一个一个看吧
 
-    ```s
+    ``` 
     less ./-file00
 
     以此类推
@@ -155,7 +157,7 @@ tags:
 * du
 
     >磁盘管理命令
-    ```s
+    ``` 
     -a或-all 显示目录中个别文件的大小。
     -b或-bytes 显示目录或文件大小时，以byte为单位。
     -m或--megabytes 以1MB为单位。
@@ -165,7 +167,7 @@ tags:
 
 * 方法
 
-    ```s
+    ``` 
     du -a -b |grep 1033
 
     显示所有文件大小以bytes为单位并用正则匹配1033bytes大小的文件
@@ -184,7 +186,7 @@ tags:
 
 * grep
 
-    ```s
+    ``` 
     -v 或 --invert-match : 显示不包含匹配文本的所有行。
 
     -n 显示行号
@@ -193,7 +195,7 @@ tags:
 
 * 步骤
 
-    ```s
+    ``` 
     find / -user 'bandit7' -group 'bandit6' -size 33c | grep -v denied
 
     # -user所有者 -group 所在组 -size 文件大小 -c 单位bytes
@@ -209,7 +211,7 @@ tags:
 
 * 步骤
 
-    ```s
+    ``` 
     cat data.txt|grep millionth
 
     #millionth       cvX2JJa4CFALtqS87jk27qwqGhBM9plV
@@ -223,7 +225,7 @@ tags:
 
     `sort` 可针对文本文件的内容，以行为单位来排序。
 
-    ```s
+    ``` 
     -b 忽略每行前面开始出的空格字符。
     -c 检查文件是否已经按照顺序排序。
     -d 排序时，处理英文字母、数字及空格字符外，忽略其他的字符。
@@ -247,7 +249,7 @@ tags:
 
     >Linux uniq 命令用于检查及删除文本文件中重复出现的行列，一般与 sort 命令结合使用。
 
-    ```s
+    ``` 
     -c或--count 在每列旁边显示该行重复出现的次数。
     -d或--repeated 仅显示重复出现的行列。
     -f<栏位>或--skip-fields=<栏位> 忽略比较指定的栏位。
@@ -261,7 +263,7 @@ tags:
 
 * 步骤
 
-    ```s
+    ``` 
     cat data.txt |sort| uniq -u
 
     #UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
@@ -273,7 +275,7 @@ tags:
 
 * strings
 
-    ```s
+    ``` 
     print the strings of printable characters in files.
 
     在对象文件或二进制文件中查找可打印的字符串。字符串是4个或更多可打印字符的任意序列，以换行符或空字符结束。 strings命令对识别随机对象文件很有用。
@@ -282,7 +284,7 @@ tags:
 
 * 步骤
 
-    ```s
+    ``` 
     cat data.txt |strings|grep =
 
     #truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
@@ -295,7 +297,7 @@ tags:
 
 * base64
 
-    ```s
+    ``` 
     使用 Base64 编码/解码文件或标准输入输出。
 
     -d, --decode          解码数据
@@ -306,7 +308,7 @@ tags:
 
 * 步骤
 
-    ```s
+    ``` 
     cat data.txt|base64 -d
 
     #The password is IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
@@ -320,7 +322,7 @@ tags:
 * tr
 
     >tr 命令用于转换或删除文件中的字符
-    ```s
+    ``` 
 
     tr [-cdst][--help][--version][第一字符集][第二字符集] 
 
@@ -328,7 +330,7 @@ tags:
 
 * 步骤
 
-    ```s
+    ``` 
     cat data.txt|tr [a-z] [n-za-m]|tr [A-Z] [N-ZA-M]
 
     #The password is 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
@@ -342,7 +344,8 @@ tags:
 * xxd
 
     >xxd 命令用于用二进制或十六进制显示文件的内容，如果没有指定outfile参数，则把结果显示在屏幕上，如果指定了outfile则把结果输出到 outfile中；如果infile参数为 – 或则没有指定infile参数，则默认从标准输入读入。
-    ```s
+
+    ``` 
     -r 逆向操作: 把xxd的十六进制输出内容转换回原文件的二进制内容。
     
     -p 以 postscript的连续十六进制转储输出，这也叫做纯十六进制转储
@@ -351,7 +354,7 @@ tags:
 
 * 步骤
 
-    ```s
+    ``` 
     将data.txt复制到/tmp/temp路径下，因为原路径没有权限，但是要注意的是/tmp普通用户没有可读权限，但是有可写可执行权限
 
     cp /home/bandit12/data.txt /tmp/test
@@ -376,7 +379,7 @@ tags:
     #The password is 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
 
     ```
-    ```s
+    ``` 
     这仅仅只是一个开始，接下来每一步需要做的事情是，根据文件头判断它是什么类型的压缩文件。Linux常见的文件包有三种，gnuzip压缩的.gz文件；bzip2压缩的.bz2文件；tar打包的.tar文件。
 
     $ xxd data | head
@@ -407,7 +410,7 @@ tags:
 
 * 步骤
 
-    ```s
+    ``` 
     ssh -i ./sshkey.private bandit14@localhost
 
     cat /etc/bandit_pass/bandit14
@@ -420,7 +423,7 @@ tags:
 
 * nc
 
-    ```s
+    ``` 
     echo 4wcYUJFw0k0XLShlDzztnTBHiqxU3b3|nc localhost 30000
 
     #BfMYroe26WYalil77FoDi9qh59eK5xNr
@@ -437,7 +440,7 @@ tags:
 
     * 使用
 
-        ```s
+        ``` 
         openssl s_client -connect xxxx:xxx
 
         cluFn7wTiGryunymYOu4RcffSxQluehd
@@ -451,7 +454,7 @@ tags:
 
 * 步骤
 
-    ```s
+    ``` 
     nmap localhost -p 31000-32000
 
     31046/tcp open  unknown
@@ -494,7 +497,7 @@ tags:
 
     得到一串ssh密钥，还需要用私钥登录
 
-    ```s
+    ``` 
     touch 111.private
     vi 111.private
 
@@ -515,7 +518,7 @@ tags:
 
 * 步骤
 
-    ```s
+    ``` 
 
     diff password.new password.new
 
@@ -528,7 +531,7 @@ tags:
 
 * 步骤
 
-    ```s
+    ``` 
     连接就会断开，但是不影响命令的执行，先前想的是用管道符能不能命令执行，试了试发现emm，管道符连接后执行的命令是在本地呀，于是乎不用管道符，直接连接命令执行(前提是有权限读取，前几关看过readme权限，任意用户都是可读的)
 
     ssh bandit18@bandit.labs.overthewire.org -p 2220 cat readme
@@ -551,7 +554,7 @@ tags:
 
 * 步骤
 
-    ```s
+    ``` 
     ls-al 
 
     #-rwsr-x---  1 bandit20 bandit19 7296 May  7  2020 bandit20-do
@@ -571,7 +574,7 @@ tags:
 
 * 步骤
 
-    ```s
+    ``` 
     echo GbKksEFF4yrVs6il55v6gwY5aVje5f0j | nc -l -p 33333
     #打开端口并且放入一行信息
 
@@ -588,7 +591,7 @@ tags:
 
 * 存疑
 
-    ```s
+    ``` 
     cat /usr/bin/cronjob_bandit22.sh 显示没有权限
 
     #-rwxr-x--- 1 bandit22 bandit21 130 May  7  2020 /usr/bin/cronjob_bandit22.sh
@@ -597,10 +600,11 @@ tags:
 * 步骤
 
     >https://blog.csdn.net/weixin_43220691/article/details/119764079
-    ```s
+
+    ``` 
     bandit21@bandit:/etc/cron.d$ cat cronjob_bandit22
     @reboot bandit22 /usr/bin/cronjob_bandit22.sh &> /dev/null
-    * * * * * bandit22 /usr/bin/cronjob_bandit22.sh &> /dev/null
+    bandit22 /usr/bin/cronjob_bandit22.sh &> /dev/null
 
     bandit21@bandit:/etc/cron.d$ cat /usr/bin/cronjob_bandit22.sh
     #!/bin/bash
@@ -618,7 +622,7 @@ tags:
 
 * 步骤
 
-    ```s
+    ``` 
     cat cronjob_bandit23
     cat /usr/bin/cronjob_bandit23.sh
 
@@ -653,7 +657,7 @@ tags:
 
 * 步骤
 
-    ```s
+    ``` 
     #!/bin/bash
 
     myname=$(whoami)
@@ -689,7 +693,7 @@ tags:
 
 * 代码
 
-    ```s
+    ``` 
      #!/bin/bash         
     a="UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ"
     b=0                                 
@@ -706,7 +710,7 @@ tags:
 
 * 结果
 
-    ```s
+    ``` 
     cat as02
 
     Wrong! Please enter the correct pincode. Try again.
@@ -756,7 +760,7 @@ tags:
 
 * 步骤
 
-    ```s
+    ``` 
     https://blog.csdn.net/liukaitydn/article/details/83046083
 
     cat /etc/passwd
@@ -789,7 +793,7 @@ tags:
 
 * vi
 
-    ```s
+    ``` 
     :!command 暂停vi，执行指定的shell命令
     :sh 暂停vi，启动一个新的shell
     :set显示所有的vi环境变量设置
@@ -803,7 +807,7 @@ tags:
 
 * steps
 
-    ```s
+    ``` 
     缩小命令窗口，拖成一个角角，ssh登录，
 
     登陆后按v键(窗口要够小，不然more命令全输出就退出登录了)
@@ -824,7 +828,7 @@ tags:
 
 * steps
 
-    ```s
+    ``` 
     cd /tmp
     mkdir test
 
@@ -847,7 +851,7 @@ tags:
 
 * git
 
-    ```s
+    ``` 
     git revert 还原一个版本的修改，必须提供一个具体的版本号，git revert bbaf6fb5060b4875b18ff9ff637ce118256d6f20
 
     git branch：对分支的增、删、查等操作，例如'git branch new_branch'会从当前的工作版本创建一个叫做new_branch的新分支，'git branch -D new_branch'就会强制删除叫做new_branch的分支，'git branch'就会列出本地所有的分支
@@ -862,7 +866,7 @@ tags:
 
 * steps
 
-    ```s
+    ``` 
     cd /tmp
     mkdir test
     git clone ssh://bandit28-git@localhost/home/bandit28-git/repo
@@ -890,7 +894,7 @@ tags:
 
 * steps
 
-    ```s
+    ``` 
     clone下来之后发现文件密码写着no passwords in production!
 
     git log发现历史版本也只是更改了username
@@ -928,7 +932,7 @@ tags:
 
 * steps
 
-    ```s
+    ``` 
     git show-ref
     git show refs/tags/secret
 
@@ -944,7 +948,7 @@ tags:
 
 * 引用内容
 
-    ```s
+    ``` 
     git add . //由于文件发生了变化所以我们要追踪文件变化特别意不要忘记add后面的点  
 
     git commit -m "Test" //这里相当于一个注释告诉别人谁做了什么操作
@@ -956,7 +960,7 @@ tags:
 
 * steps
 
-    ```s
+    ``` 
     新建一个文件夹/tmp/t4
 
     新建文件key.txt 
@@ -979,7 +983,7 @@ tags:
 
 * linux知识
 
-    ```s
+    ``` 
     $$ 
     Shell本身的PID（ProcessID） 
     $! 
@@ -1003,7 +1007,7 @@ tags:
 
 * steps
 
-    ```s
+    ``` 
     $0 #进入shell
 
     cat /etc/bandit_pass/bandit33
