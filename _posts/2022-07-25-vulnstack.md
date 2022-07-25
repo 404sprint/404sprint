@@ -47,7 +47,7 @@ tags:
 * 主机发现
 
     ```s
-     
+ 
     arp-scan -l
 
     nmap -sP 192.168.197.0/24
@@ -59,7 +59,7 @@ tags:
 * 服务发现
 
     ```s
-     
+   
     nmap -sV -A 192.168.197.134
 
     Not shown: 997 filtered tcp ports (no-response)
